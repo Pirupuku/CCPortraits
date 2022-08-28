@@ -209,7 +209,6 @@ CCPortraits:SetScript("OnUpdate",  function()
 	
 	if PlayerFrame.portrait~=nil then
 		local _, class = UnitClass("player")
-		local iconCoords = CLASS_BUTTONS[class]
 		local timeLeft, iconLeft = longestBuffDebuff()
 		
 		if iconLeft ~= "" then
@@ -217,7 +216,7 @@ CCPortraits:SetScript("OnUpdate",  function()
 			SetPortraitToTexture(PlayerFrame.portrait, iconLeft)
 		else
 			PlayerFrame.portrait:SetTexture(iconPath, true)
-			PlayerFrame.portrait:SetTexCoord(unpack(iconCoords))
+			PlayerFrame.portrait:SetTexCoord(unpack(CLASS_BUTTONS[class]))
 		end
 		if timeLeft > 0 then
 			t:SetText(format("%d", timeLeft))
@@ -238,8 +237,21 @@ CCPortraits:SetScript("OnUpdate",  function()
 	
 	if(UnitName("target")~=nil and UnitIsPlayer("target") ~= nil and TargetFrame.portrait~=nil) then
 		local _, class = UnitClass("target")
-		TargetFrame.portrait:SetTexture(iconPath, true)
-		TargetFrame.portrait:SetTexCoord(unpack(CLASS_BUTTONS[class]))
+		
+		local timeLeft, iconLeft = longestBuffDebuff()
+		
+		if iconLeft ~= "" then
+			TargetFrame.portrait:SetTexCoord(0,1,0,1)
+			SetPortraitToTexture(TargetFrame.portrait, iconLeft)
+		else
+			TargetFrame.portrait:SetTexture(iconPath, true)
+			TargetFrame.portrait:SetTexCoord(unpack(CLASS_BUTTONS[class]))
+		end
+		if timeLeft > 0 then
+			t:SetText(format("%d", timeLeft))
+		else
+			t:SetText(nil)
+		end
 	elseif(UnitName("target")~=nil) then
 		TargetFrame.portrait:SetTexCoord(0,1,0,1)
 	end
