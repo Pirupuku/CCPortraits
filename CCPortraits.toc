@@ -1,0 +1,5 @@
+## Interface: 11200
+## Title: CCPortraits
+## Author: Dieken
+## Notes: Shows Class Portraits + specific CC (Modified ClassPortraits_Vanilla addon -> Credits to the original author)
+CCPortraits.lua
