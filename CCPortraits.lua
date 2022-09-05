@@ -176,7 +176,6 @@ local function longestBuffDebuff()
 		for index, value in ipairs(ccDebuffs) do
 		
 			if GetPlayerBuffTexture(GetPlayerBuff(j, "HARMFUL")) == value then
-			SM_print(GetPlayerBuffTexture(GetPlayerBuff(j, "HARMFUL")))
 				if tempDebuff == 0 then
 					tempDebuff = GetPlayerBuffTimeLeft(GetPlayerBuff(j, "HARMFUL"))
 					tempDebuffIcon = GetPlayerBuffTexture(GetPlayerBuff(j, "HARMFUL"))
