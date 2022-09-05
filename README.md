@@ -11,3 +11,6 @@ Might work with addons like modUI or zUI.
 Works with ShaguTweaks.
 
 Any feedback would be nice!
+
+![image](https://user-images.githubusercontent.com/55432521/188363285-6bf563b4-9ece-4abf-9472-6d4d048dfea0.png)
+On this image you can see "snare" due to an active "Aspect of the Pack" on a hunter.
